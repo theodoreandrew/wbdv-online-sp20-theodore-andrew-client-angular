@@ -1,0 +1,4 @@
+<p *ngIf="!course.title || !course._id">Loading...</p>
+<h1 *ngIf="course.title && course._id">
+  This is course for {{ course.title }}
+</h1>

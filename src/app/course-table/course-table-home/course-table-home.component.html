@@ -1,0 +1,12 @@
+<app-add-course-bar></app-add-course-bar>
+<div class="container-fluid">
+  <div class="list-group">
+    <a
+      href="table/course/{{ course._id }}"
+      class="list-group-item"
+      *ngFor="let course of courses"
+    >
+      <i class="fa fa-file"></i> {{ course.title }}
+    </a>
+  </div>
+</div>

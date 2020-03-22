@@ -1,8 +1,16 @@
 <div class="container-fluid">
   <p *ngIf="!course.title || !course._id">Loading...</p>
   <h1 *ngIf="course.title && course._id">
-    <a href="table/course" id="close-icon"><i class="fa fa-times"></i></a>
+    <a href="table/courses" id="close-icon"><i class="fa fa-times"></i></a>
     This is course for {{ course.title }}
   </h1>
-  <app-module-list></app-module-list>
+  <div class="row">
+    <div class="col-sm-3">
+      <app-module-list></app-module-list>
+    </div>
+
+    <div class="col-sm-9">
+      <app-lesson-list></app-lesson-list>
+    </div>
+  </div>
 </div>

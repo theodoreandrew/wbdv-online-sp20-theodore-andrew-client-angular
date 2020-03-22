@@ -1,0 +1,13 @@
+<p *ngIf="!lessons.length">No lessons for this module</p>
+<ul class="nav nav-tabs" *ngIf="lessons.length">
+  <li class="nav-item" *ngFor="let lesson of lessons">
+    <a
+      class="nav-link special-link"
+      href="table/courses/{{ courseId }}/modules/{{ moduleId }}/lessons/{{
+        lesson._id
+      }}/topics"
+      [class]="{ active: lessonId === lesson._id }"
+      >{{ lesson.title }}</a
+    >
+  </li>
+</ul>

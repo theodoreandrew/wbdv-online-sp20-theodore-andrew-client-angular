@@ -4,8 +4,9 @@ import { CourseTableHomeComponent } from "./course-table-home/course-table-home.
 
 const routes: Routes = [
   {
-    path: "table/course",
-    component: CourseTableHomeComponent
+    path: "table/courses",
+    component: CourseTableHomeComponent,
+    pathMatch: "prefix"
   }
 ];
 

@@ -11,6 +11,7 @@ import { ModuleServiceClient } from "../../services/ModuleServiceClient";
 export class ModuleListComponent implements OnInit {
   modules = [];
   courseId = "";
+  moduleId = "";
 
   constructor(
     private route: ActivatedRoute,
@@ -20,9 +21,12 @@ export class ModuleListComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.courseId = params.cid;
-      this.service
-        .findAllModules(this.courseId)
-        .then(modules => (this.modules = modules));
+      this.moduleId = params.mid;
+      this.service.findAllModules(this.courseId).then(modules => {
+        this.modules = modules;
+      });
     });
+
+    console.log(this.moduleId);
   }
 }

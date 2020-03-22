@@ -7,6 +7,7 @@ import { CourseViewerModule } from "./course-viewer/course-viewer.module";
 import { AppComponent } from "./app.component";
 import { LandingPageComponent } from "./landing-page/landing-page.component";
 import { CourseServiceClient } from "./services/CourseServiceClient";
+import { ModuleServiceClient } from "./services/ModuleServiceClient";
 
 @NgModule({
   declarations: [AppComponent, LandingPageComponent],
@@ -16,7 +17,7 @@ import { CourseServiceClient } from "./services/CourseServiceClient";
     CourseTableModule,
     CourseViewerModule
   ],
-  providers: [CourseServiceClient],
+  providers: [CourseServiceClient, ModuleServiceClient],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

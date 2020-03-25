@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <app-add-course-bar></app-add-course-bar>
+  <app-course-table
+    *ngIf="layout === 'table'"
+    [courses]="courses"
+    [layout]="layout"
+  ></app-course-table>
+  <app-course-grid
+    *ngIf="layout === 'grid'"
+    [courses]="courses"
+    [layout]="layout"
+  ></app-course-grid>
+</div>

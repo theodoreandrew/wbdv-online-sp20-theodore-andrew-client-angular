@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div
+    class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6"
+  >
+    <div class="col mb-4" *ngFor="let course of courses">
+      <div class="card">
+        <img
+          src="../../../assets/beauty.jpg"
+          alt="document"
+          class="image-card"
+        />
+        <div class="card-body">
+          <a
+            href="{{ layout }}/courses/{{ course._id }}/modules"
+            class="title-text"
+            >{{ course.title }}</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

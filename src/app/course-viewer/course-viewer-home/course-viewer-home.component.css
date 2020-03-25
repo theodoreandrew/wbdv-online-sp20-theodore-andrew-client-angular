@@ -1,3 +1,16 @@
 #close-icon {
   color: #000;
 }
+
+#no-modules-indicator {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.no-modules-text {
+  font-weight: 700;
+}
+
+#add-module {
+  text-align: center;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
 import { ModuleServiceClient } from "../../services/ModuleServiceClient";
@@ -9,24 +9,18 @@ import { ModuleServiceClient } from "../../services/ModuleServiceClient";
   styleUrls: ["./module-list.component.css"]
 })
 export class ModuleListComponent implements OnInit {
-  modules = [];
+  @Input() modules = [];
   courseId = "";
   moduleId = "";
+  layoutRoute = "";
 
-  constructor(
-    private route: ActivatedRoute,
-    private service: ModuleServiceClient
-  ) {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.courseId = params.cid;
       this.moduleId = params.mid;
-      this.service.findAllModules(this.courseId).then(modules => {
-        this.modules = modules;
-      });
+      this.layoutRoute = params.layout;
     });
-
-    console.log(this.moduleId);
   }
 }

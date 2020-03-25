@@ -1,6 +1,8 @@
 <div class="list-group">
   <a
-    href="table/courses/{{ courseId }}/modules/{{ module._id }}/lessons"
+    href="{{ layoutRoute }}/courses/{{ courseId }}/modules/{{
+      module._id
+    }}/lessons"
     class="list-group-item"
     [class]="{ active: moduleId === module._id }"
     *ngFor="let module of modules"

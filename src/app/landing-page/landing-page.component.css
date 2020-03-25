@@ -1,0 +1,13 @@
+.landing-page {
+  width: 70%;
+  margin: 0 auto;
+}
+
+#welcome-title {
+  text-align: center;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}

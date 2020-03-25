@@ -1,15 +1,27 @@
 <div class="container-fluid">
-  <p *ngIf="!course.title || !course._id">Loading...</p>
+  <p *ngIf="(!course.title || !course._id) && modules.length">Loading...</p>
   <h1 *ngIf="course.title && course._id">
-    <a href="table/courses" id="close-icon"><i class="fa fa-times"></i></a>
+    <a href="{{ layoutRoute }}/courses" id="close-icon"
+      ><i class="fa fa-times"></i
+    ></a>
     This is course for {{ course.title }}
   </h1>
   <div class="row">
-    <div class="col-sm-3">
-      <app-module-list></app-module-list>
+    <div
+      id="no-modules-indicator"
+      *ngIf="course._id && course.title && !modules.length"
+    >
+      <span class="no-modules-text">No modules for {{ course.title }}</span>
+      <!-- <div id="add-module">
+        <button class="btn btn-primary">Add Module</button>
+      </div> -->
     </div>
 
-    <div class="col-sm-9">
+    <div class="col-sm-3" *ngIf="modules.length">
+      <app-module-list [modules]="modules"></app-module-list>
+    </div>
+
+    <div *ngIf="modules.length" class="col-sm-9">
       <app-lesson-list></app-lesson-list>
     </div>
   </div>

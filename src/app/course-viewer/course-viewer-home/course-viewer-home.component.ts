@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
+
 import { CourseServiceClient } from "../../services/CourseServiceClient";
+import { ModuleServiceClient } from "../../services/ModuleServiceClient";
 
 @Component({
   selector: "app-course-viewer-home",
@@ -9,18 +11,28 @@ import { CourseServiceClient } from "../../services/CourseServiceClient";
 })
 export class CourseViewerHomeComponent implements OnInit {
   course = { _id: "", title: "" };
+  layoutRoute = "";
+  modules = [];
 
   constructor(
-    private service: CourseServiceClient,
+    private courseService: CourseServiceClient,
+    private moduleService: ModuleServiceClient,
     private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const courseId = params.cid;
-      this.service
+      this.courseService
         .findCourseById(courseId)
         .then(course => (this.course = course));
+
+      this.moduleService.findAllModules(courseId).then(modules => {
+        this.modules = modules;
+        console.log(this.modules.length);
+      });
+
+      this.layoutRoute = params.layout;
     });
   }
 }

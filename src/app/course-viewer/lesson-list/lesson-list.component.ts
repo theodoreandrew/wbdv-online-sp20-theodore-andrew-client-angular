@@ -13,6 +13,7 @@ export class LessonListComponent implements OnInit {
   courseId = "";
   moduleId = "";
   lessonId = "";
+  layoutRoute = "";
 
   constructor(
     private route: ActivatedRoute,
@@ -24,6 +25,7 @@ export class LessonListComponent implements OnInit {
       this.courseId = params.cid;
       this.lessonId = params.lid;
       this.moduleId = params.mid;
+      this.layoutRoute = params.layout;
       this.service
         .findLessonsForModule(this.moduleId)
         .then(lessons => (this.lessons = lessons));

@@ -5,7 +5,7 @@ import axios from "axios";
 export class LessonServiceClient {
   findLessonsForModule = async (moduleId: string) => {
     const response = await axios.get(
-      `http://wbdv-generic-server.herokuapp.com/api/andrew.t/modules/${moduleId}/lessons`
+      `https://wbdv-generic-server.herokuapp.com/api/andrew.t/modules/${moduleId}/lessons`
     );
 
     return response.data;

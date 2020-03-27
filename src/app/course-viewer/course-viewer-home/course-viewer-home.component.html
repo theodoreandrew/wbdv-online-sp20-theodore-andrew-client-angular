@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <p *ngIf="(!course.title || !course._id) && modules.length">Loading...</p>
   <h1 *ngIf="course.title && course._id">
-    <a href="{{ layoutRoute }}/courses" id="close-icon"
+    <a routerLink="/{{ layoutRoute }}/courses" id="close-icon"
       ><i class="fa fa-times"></i
     ></a>
     This is course for {{ course.title }}

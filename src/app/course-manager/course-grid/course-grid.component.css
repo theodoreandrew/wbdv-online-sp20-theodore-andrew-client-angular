@@ -3,3 +3,7 @@
   height: 250px;
   object-fit: cover;
 }
+
+.course-grid {
+  margin-top: 35px;
+}

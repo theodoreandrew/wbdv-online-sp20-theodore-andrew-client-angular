@@ -4,15 +4,15 @@ import { CourseViewerHomeComponent } from "./course-viewer-home/course-viewer-ho
 
 const routes: Routes = [
   {
-    path: ":layout/courses/:cid/modules",
+    path: "",
     component: CourseViewerHomeComponent
   },
   {
-    path: ":layout/courses/:cid/modules/:mid/lessons",
+    path: ":mid/lessons",
     component: CourseViewerHomeComponent
   },
   {
-    path: ":layout/courses/:cid/modules/:mid/lessons/:lid",
+    path: ":mid/lessons/:lid",
     component: CourseViewerHomeComponent
   }
 ];

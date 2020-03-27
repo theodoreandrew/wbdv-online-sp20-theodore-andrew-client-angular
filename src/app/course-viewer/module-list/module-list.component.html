@@ -1,10 +1,10 @@
 <div class="list-group">
   <a
-    href="{{ layoutRoute }}/courses/{{ courseId }}/modules/{{
+    routerLink="/{{ layoutRoute }}/courses/{{ courseId }}/modules/{{
       module._id
     }}/lessons"
     class="list-group-item"
-    [class]="{ active: moduleId === module._id }"
+    routerLinkActive="active"
     *ngFor="let module of modules"
   >
     {{ module.title }}

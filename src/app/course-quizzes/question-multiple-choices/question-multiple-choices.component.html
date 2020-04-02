@@ -1,0 +1,13 @@
+<div class="question-header">
+  <span class="question-name">{{ question.question }}</span>
+  <i class="fa fa-check float-right"></i>
+</div>
+<div class="list-group">
+  <div class="list-group-item" *ngFor="let choice of question.choices">
+    <input type="radio" [id]="choice" name="answer" [value]="choice" />
+    <label [for]="choice" class="choice">{{ choice }}</label>
+  </div>
+
+  <span class="your-answer-mp">Your answer: </span>
+</div>
+<button class="btn btn-success">Grade</button>

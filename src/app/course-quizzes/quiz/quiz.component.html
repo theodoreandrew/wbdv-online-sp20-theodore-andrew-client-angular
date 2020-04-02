@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>{{ quiz.title }}</h1>
+  <div class="list-group">
+    <div class="list-group-item" *ngFor="let question of questions">
+      <div [ngSwitch]="question.type">
+        <app-question-true-false
+          *ngSwitchCase="'TRUE_FALSE'"
+          [question]="question"
+        ></app-question-true-false>
+        <app-question-multiple-choices
+          *ngSwitchCase="'MULTIPLE_CHOICE'"
+          [question]="question"
+        ></app-question-multiple-choices>
+      </div>
+    </div>
+  </div>
+</div>

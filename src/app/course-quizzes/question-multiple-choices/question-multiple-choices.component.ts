@@ -12,10 +12,22 @@ export class QuestionMultipleChoicesComponent implements OnInit {
     quizId: "",
     question: "",
     correct: "",
-    choices: []
+    choices: [],
+    answer: ""
   };
+  @Input() answerSelected = "No answer yet";
+
+  grading = false;
 
   constructor() {}
+
+  onChangeAnswer = () => {
+    this.grading = false;
+  };
+
+  onSubmitAnswer = () => {
+    this.grading = true;
+  };
 
   ngOnInit(): void {}
 }

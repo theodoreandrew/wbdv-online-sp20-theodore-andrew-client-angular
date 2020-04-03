@@ -1,5 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+
 import { AppRoutingModule } from "./app-routing.module";
 import { CourseViewerModule } from "./course-viewer/course-viewer.module";
 import { CourseManagerModule } from "./course-manager/course-manager.module";
@@ -20,6 +22,7 @@ import { QuestionServiceClient } from "./services/QuestionServiceClient";
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     CourseViewerModule,
     CourseManagerModule,
     CourseListModule,

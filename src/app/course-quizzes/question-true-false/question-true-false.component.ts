@@ -11,10 +11,22 @@ export class QuestionTrueFalseComponent implements OnInit {
     title: "",
     quizId: "",
     question: "",
-    correct: ""
+    correct: "",
+    answer: ""
   };
+  @Input() answerSelected = "No answer yet";
+
+  grading = false;
 
   constructor() {}
+
+  onChangeAnswer = () => {
+    this.grading = false;
+  };
+
+  onSubmitAnswer = () => {
+    this.grading = true;
+  };
 
   ngOnInit(): void {}
 }

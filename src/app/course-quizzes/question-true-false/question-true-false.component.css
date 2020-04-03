@@ -7,3 +7,36 @@
   margin-top: 20px;
   margin-bottom: 18px;
 }
+
+.choice {
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question-name {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.fa-check {
+  color: rgb(58, 179, 58);
+  position: relative;
+  top: 4px;
+}
+
+.fa-times {
+  color: rgb(255, 43, 43);
+  position: relative;
+  top: 4px;
+}
+
+.choice-with-radio {
+  display: flex;
+  justify-content: space-between;
+}

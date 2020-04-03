@@ -4,8 +4,8 @@
     <div class="list-group-item" *ngFor="let question of questions">
       <div [ngSwitch]="question.type">
         <app-question-true-false
-          *ngSwitchCase="'TRUE_FALSE'"
           [question]="question"
+          *ngSwitchCase="'TRUE_FALSE'"
         ></app-question-true-false>
         <app-question-multiple-choices
           *ngSwitchCase="'MULTIPLE_CHOICE'"

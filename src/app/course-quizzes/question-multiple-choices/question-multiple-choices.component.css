@@ -16,6 +16,23 @@
 
 .fa-check {
   color: rgb(58, 179, 58);
+  position: relative;
+  top: 4px;
+}
+
+.fa-times {
+  color: rgb(255, 43, 43);
+  position: relative;
+  top: 4px;
+}
+
+.check-inside-choices {
+  color: inherit;
+}
+
+.choice-with-radio {
+  display: flex;
+  justify-content: space-between;
 }
 
 .your-answer-mp {

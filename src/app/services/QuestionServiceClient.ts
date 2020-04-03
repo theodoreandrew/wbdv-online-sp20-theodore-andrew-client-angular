@@ -5,7 +5,7 @@ import axios from "axios";
 export class QuestionServiceClient {
   findQuestionsForQuiz = async quizId => {
     const response = await axios.get(
-      `http://localhost:3000/api/quizzes/${quizId}/questions`
+      `https://cs5610-server-node.herokuapp.com/api/quizzes/${quizId}/questions`
     );
 
     return response.data;

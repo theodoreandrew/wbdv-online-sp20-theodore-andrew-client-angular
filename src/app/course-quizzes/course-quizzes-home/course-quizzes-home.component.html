@@ -2,12 +2,15 @@
   <h1>Quizzes</h1>
   <div class="list-group">
     <div class="list-group-item" *ngFor="let quiz of quizzes">
-      {{ quiz.title }}
-      <a
-        routerLink="/courses/{{ courseId }}/quizzes/{{ quiz._id }}"
-        class="btn btn-primary float-right"
-        >Start</a
-      >
+      <h3>{{ quiz.title }}</h3>
+      <div>
+        <a
+          routerLink="/courses/{{ courseId }}/quizzes/{{ quiz._id }}"
+          class="btn btn-primary float-right"
+          >Start</a
+        >
+      </div>
+      <app-quiz-attempts-detail [quizId]="quiz._id"></app-quiz-attempts-detail>
     </div>
   </div>
 </div>

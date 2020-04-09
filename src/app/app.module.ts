@@ -16,6 +16,7 @@ import { ModuleServiceClient } from "./services/ModuleServiceClient";
 import { LessonServiceClient } from "./services/LessonServiceClient";
 import { QuizServiceClient } from "./services/QuizServiceClient";
 import { QuestionServiceClient } from "./services/QuestionServiceClient";
+import { QuizAttemptServiceClient } from "./services/QuizAttemptServiceClient";
 
 @NgModule({
   declarations: [AppComponent, LandingPageComponent],
@@ -26,15 +27,16 @@ import { QuestionServiceClient } from "./services/QuestionServiceClient";
     CourseViewerModule,
     CourseManagerModule,
     CourseListModule,
-    CourseQuizzesModule
+    CourseQuizzesModule,
   ],
   providers: [
     CourseServiceClient,
     ModuleServiceClient,
     LessonServiceClient,
     QuizServiceClient,
-    QuestionServiceClient
+    QuestionServiceClient,
+    QuizAttemptServiceClient,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

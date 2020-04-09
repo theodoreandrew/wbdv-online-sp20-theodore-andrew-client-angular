@@ -1,45 +1,34 @@
 <div class="question-header">
   <span class="question-name">{{ question.question }}</span>
-  <i
-    class="fa fa-2x fa-check float-right"
-    [ngClass]="{
-      'fa-check': grading && answerSelected === question.correct,
-      'fa-times': grading && answerSelected !== question.correct
-    }"
-  ></i>
 </div>
 <div class="list-group">
-  <div
-    class="list-group-item"
-    *ngFor="let option of question.choices"
-    [ngClass]="{
-      'list-group-item-success': grading && question.correct === option,
-      'list-group-item-danger':
-        grading && answerSelected === option && question.correct !== option
-    }"
-  >
+  <div class="list-group-item" *ngFor="let option of question.choices">
     <div class="choice-with-radio">
       <label>
         <input
           type="radio"
           name="{{ question._id }}"
-          [(ngModel)]="answerSelected"
+          [(ngModel)]="answer"
           value="{{ option }}"
           (change)="onChangeAnswer()"
         />
         <span class="choice">{{ option }}</span>
       </label>
-      <i
-        class="fa"
-        [ngClass]="{
-          'fa-check': grading && question.correct === option,
-          'fa-times':
-            grading && answerSelected === option && question.correct !== option
-        }"
-      ></i>
     </div>
   </div>
-
-  <span class="your-answer-mp">Your answer: {{ answerSelected }}</span>
+  <span class="your-answer-mp">Your answer: {{ answer }}</span>
 </div>
-<button class="btn btn-success" (click)="onSubmitAnswer()">Grade</button>
+
+<button
+  class="btn btn-success"
+  [disabled]="!answerSelected"
+  (click)="submitAnswer()"
+>
+  Record
+</button>
+<div *ngIf="recorded">
+  <i class="fa fa-check">Answer is recorded</i>
+</div>
+<div *ngIf="!recorded">
+  Please click record button to record your answer
+</div>

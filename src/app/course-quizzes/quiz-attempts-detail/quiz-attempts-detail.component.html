@@ -1,0 +1,11 @@
+<div *ngIf="!attempts.length">
+  No attempt yet
+</div>
+<div *ngIf="attempts.length">
+  Score:
+  <ul>
+    <li *ngFor="let attempt of attempts; let num = index">
+      Attempt {{ num + 1 }}: {{ attempt.score }}%
+    </li>
+  </ul>
+</div>

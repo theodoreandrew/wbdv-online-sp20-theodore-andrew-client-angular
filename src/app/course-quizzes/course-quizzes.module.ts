@@ -7,14 +7,16 @@ import { CourseQuizzesHomeComponent } from "./course-quizzes-home/course-quizzes
 import { QuizComponent } from "./quiz/quiz.component";
 import { QuestionTrueFalseComponent } from "./question-true-false/question-true-false.component";
 import { QuestionMultipleChoicesComponent } from "./question-multiple-choices/question-multiple-choices.component";
+import { QuizAttemptsDetailComponent } from "./quiz-attempts-detail/quiz-attempts-detail.component";
 
 @NgModule({
   declarations: [
     CourseQuizzesHomeComponent,
     QuizComponent,
     QuestionTrueFalseComponent,
-    QuestionMultipleChoicesComponent
+    QuestionMultipleChoicesComponent,
+    QuizAttemptsDetailComponent,
   ],
-  imports: [CommonModule, CourseQuizzesRoutingModule, FormsModule]
+  imports: [CommonModule, CourseQuizzesRoutingModule, FormsModule],
 })
 export class CourseQuizzesModule {}

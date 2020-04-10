@@ -4,14 +4,16 @@ import axios from "axios";
 @Injectable()
 export class QuizServiceClient {
   findAllQuizzes = async () => {
-    const response = await axios.get("http://localhost:3000/api/quizzes");
+    const response = await axios.get(
+      "https://cs5610-server-node.herokuapp.com/api/quizzes"
+    );
 
     return response.data;
   };
 
   findQuizById = async (quizId) => {
     const response = await axios.get(
-      `http://localhost:3000/api/quizzes/${quizId}`
+      `https://cs5610-server-node.herokuapp.com/api/quizzes/${quizId}`
     );
 
     return response.data;

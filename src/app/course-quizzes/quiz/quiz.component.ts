@@ -22,13 +22,16 @@ export class QuizComponent implements OnInit {
   ) {}
 
   submitQuiz = () => {
-    fetch(`http://localhost:3000/api/quizzes/${this.quiz._id}/attempts`, {
-      method: "POST",
-      body: JSON.stringify(this.questions),
-      headers: {
-        "content-type": "application/json",
-      },
-    })
+    fetch(
+      `https://cs5610-server-node.herokuapp.com/api/quizzes/${this.quiz._id}/attempts`,
+      {
+        method: "POST",
+        body: JSON.stringify(this.questions),
+        headers: {
+          "content-type": "application/json",
+        },
+      }
+    )
       .then((response) => response.json())
       .then((result) => console.log(result));
 
